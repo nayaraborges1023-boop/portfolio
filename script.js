@@ -15,9 +15,18 @@ const projetos = [
 
 const lista = document.getElementById("lista-projetos");
 
-projetos.forEach(p => {
+projetos.forEach((p, i) => {
   const div = document.createElement("div");
   div.classList.add("card");
+
+  div.style.opacity = "0";
+  div.style.transform = "translateY(20px)";
+
+  setTimeout(() => {
+    div.style.transition = "0.5s";
+    div.style.opacity = "1";
+    div.style.transform = "translateY(0)";
+  }, i * 300);
 
   div.innerHTML = `
     <h3>${p.nome}</h3>

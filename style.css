@@ -1,8 +1,9 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
+  animation: fadeIn 1s ease-in;
 }
 
 header {
@@ -27,7 +28,13 @@ section {
   text-align: center;
 }
 
-#lista-projetos  {
+.foto {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+#lista-projetos {
   display: flex;
   gap: 20px;
   justify-content: center;
@@ -38,7 +45,7 @@ section {
   background: rgba(255,255,255,0.2);
   padding: 20px;
   border-radius: 15px;
-  Largura:  220px;
+  width: 220px;
   transition: 0.3s;
 }
 
@@ -66,9 +73,14 @@ footer {
   background: rgba(0,0,0,0.3);
 }
 
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 @media (max-width: 600px) {
-   #lista-projetos  {
+  #lista-projetos {
     flex-direction: column;
     align-items: center;
   }
-}
+  }
